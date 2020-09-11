@@ -1,0 +1,10 @@
+[
+  {
+    "text": "give me the solution",
+    "intent": "seesolution",
+    "intent_prediction": {
+      "name": "openeditor",
+      "confidence": 0.2445577085018158
+    }
+  }
+]

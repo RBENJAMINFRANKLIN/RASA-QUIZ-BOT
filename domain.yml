@@ -1,0 +1,49 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    triggers: utter_greet
+- goodbye:
+    triggers: utter_goodbye
+- EXTERNAL_reminder:
+    triggers: action_react_to_reminder
+- ask_remind_call
+- quiz
+- answer
+- get_email
+- out_of_scope
+entities:
+- answer
+- quiz
+- mail
+slots:
+  answer:
+    type: text
+  mail:
+    type: unfeaturized
+responses:
+  utter_greet:
+  - text: Hey! Welcome to the RASA quiz. Please enter your email so that we can stay
+      in touch.
+  utter_goodbye:
+  - text: Thank you for time. Hope you have a great day.
+  utter_ask_affirmation:
+  - buttons:
+    - payload: /approach
+      title: May I know if this is your approach.
+    - payload: /out_of_scope
+      title: No I mean't something else
+    text: May I know if this is your approach?
+  utter_ask_rephrase:
+  - text: Please rephrase again
+actions:
+- utter_greet
+- utter_goodbye
+- action_set_reminder
+- action_react_to_reminder
+- action_quiz
+- action_answer
+- action_send_problem_link
+- utter_ask_affirmation
+- utter_ask_rephrase
