@@ -143,7 +143,7 @@ class Actionsendmail(Action):
         import smtplib
 
         EMAIL_ADDRESS = "benjaminimp10@gmail.com"
-        EMAIL_PASSWORD = "Rajendran-10"
+        EMAIL_PASSWORD = ""
         recieverid = str(tracker.get_slot('mail'))
 
         with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
